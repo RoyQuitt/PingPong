@@ -2,6 +2,7 @@
 using System.Net;
 using System.Net.Sockets;
 using System.Text;
+using PingPong.Utils;
 
 namespace PIngPong.Client
 {
@@ -10,10 +11,12 @@ namespace PIngPong.Client
         public class SocketClient
         {
             public int Port { get; set; }
+            private IInput _reader;
 
-            public SocketClient(int port)
+            public SocketClient(int port, IInput reader)
             {
                 Port = port;
+                _reader = reader;
             }
 
             private IPAddress GetLocalIPAddress()
@@ -27,6 +30,11 @@ namespace PIngPong.Client
                     }
                 }
                 throw new Exception("No network adapters with an IPv4 address in the system!");
+            }
+
+            private string GetStringToSend()
+            {
+                return _reader.Read();
             }
 
             public void ExecuteClient()
