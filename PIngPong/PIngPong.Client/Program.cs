@@ -7,7 +7,7 @@ namespace PIngPong.Client
 
         static void Main(string[] args)
         {
-            var client = new SocketClient();
+            var client = new SocketClient(int.Parse(args[0]));
             client.ExecuteClient();
         }
     }

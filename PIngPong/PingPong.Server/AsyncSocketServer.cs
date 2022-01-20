@@ -23,19 +23,32 @@ namespace PingPong.Server
             ServerPort = serverPort;
         }
 
+        private IPAddress GetLocalIPAddress()
+        {
+            IPHostEntry ipHostInfo = Dns.GetHostEntry(Dns.GetHostName());
+            foreach (var ip in ipHostInfo.AddressList)
+            {
+                if (ip.AddressFamily == AddressFamily.InterNetwork)
+                {
+                    return ip;
+                }
+            }
+            throw new Exception("No network adapters with an IPv4 address in the system!");
+        }
+
         public void StartListening()
         {
             // Data buffer
             byte[] bytes = new byte[BUFFER_SIZE];
 
-            IPHostEntry ipHostInfo = Dns.GetHostEntry(Dns.GetHostName());
-            IPAddress ipAddress = ipHostInfo.AddressList[0];
+            IPAddress ipAddress = GetLocalIPAddress();
             IPEndPoint localEndPoint = new IPEndPoint(ipAddress, ServerPort);
 
             Socket listener = new Socket(AddressFamily.InterNetwork, SocketType.Stream, ProtocolType.Tcp);
 
             try
             {
+                Console.WriteLine(localEndPoint.ToString());
                 listener.Bind(localEndPoint);
                 listener.Listen(100);
 

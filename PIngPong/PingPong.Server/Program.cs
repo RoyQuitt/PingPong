@@ -1,4 +1,5 @@
 ﻿using System;
+using PingPong.Server;
 
 namespace PingPong.Server
 {
@@ -6,7 +7,8 @@ namespace PingPong.Server
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            var asyncSocketServer = new AsyncSocketServer(int.Parse(args[0]));
+            asyncSocketServer.StartListening();
         }
     }
 }
