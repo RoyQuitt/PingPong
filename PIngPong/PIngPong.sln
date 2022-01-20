@@ -3,9 +3,11 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.32106.194
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PIngPong", "PIngPong\PIngPong.csproj", "{2F2A8CEC-D453-49BB-B5A2-3D007854736E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PIngPong", "PIngPong\PIngPong.csproj", "{2F2A8CEC-D453-49BB-B5A2-3D007854736E}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PIngPong.Client", "PIngPong.Client\PIngPong.Client.csproj", "{0C6E898D-983C-4102-B77D-5D24854BE4CC}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PIngPong.Client", "PIngPong.Client\PIngPong.Client.csproj", "{0C6E898D-983C-4102-B77D-5D24854BE4CC}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PingPong.Server", "PingPong.Server\PingPong.Server.csproj", "{DCE7494C-97A3-4325-BFA6-2461539EB74A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,6 +23,10 @@ Global
 		{0C6E898D-983C-4102-B77D-5D24854BE4CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0C6E898D-983C-4102-B77D-5D24854BE4CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0C6E898D-983C-4102-B77D-5D24854BE4CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DCE7494C-97A3-4325-BFA6-2461539EB74A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DCE7494C-97A3-4325-BFA6-2461539EB74A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DCE7494C-97A3-4325-BFA6-2461539EB74A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DCE7494C-97A3-4325-BFA6-2461539EB74A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
